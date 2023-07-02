@@ -3,10 +3,9 @@ import FormConfig from '@/models/FormConfig';
 import FormData from '@/models/FormData';
 import axios from 'axios';
 import DynamicForm from '@/components/DynamicForm';
-import { makeStyles } from '@mui/material';
 import ModalMessage from '@/components/ModalMessage';
 
-const centerDiv: React.CSSProperties = {
+const centerDiv = {
   margin: 'auto',
   width: '30%',
   marginTop: '100px',

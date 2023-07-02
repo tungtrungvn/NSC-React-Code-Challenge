@@ -1,8 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import formConfig from '../../config.json';
-import formData from '../../data.json';
 import FormConfig, { Field } from "../../models/FormConfig";
-import FormData, { FieldValue } from "../../models/FormData";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     let form: FormConfig = {

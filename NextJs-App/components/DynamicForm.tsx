@@ -39,28 +39,34 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ config, data, submitCallback 
     return value;
   }
 
+  let formStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '2rem'
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <h2>{formConfig.formName}</h2>
       <FormControl fullWidth>
         {formConfig.fields.map((field) => (
           <div key={field.id}>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            <Box sx={formStyle}>
               {field.type === 'text' && (
-                <TextField type="text" label={field.name} sx={{mb: 2}} fullWidth id={field.id.toString()} name={field.name} variant="outlined"
+                <TextField type="text" label={field.name} sx={{mb: 2}} fullWidth id={field.id.toString()} variant="outlined"
                   value={getValue<string>(field.id)} onChange={handleChange} />
               )}
               {field.type === 'number' && (
-                <TextField type="number" label={field.name} sx={{mb: 2}} fullWidth id={field.id.toString()} name={field.name} variant="outlined"
+                <TextField type="number" label={field.name} sx={{mb: 2}} fullWidth id={field.id.toString()} variant="outlined"
                   value={getValue<number>(field.id)} onChange={handleChange} />
               )}
               {field.type === 'date' && (
-                <TextField type="date" label={field.name} sx={{mb: 2}} fullWidth id={field.id.toString()} name={field.name} variant="outlined"
+                <TextField type="date" label={field.name} sx={{mb: 2}} fullWidth id={field.id.toString()} variant="outlined"
                   value={moment(getValue<string>(field.id), "MM/DD/YYYY").format("YYYY-MM-DD")} onChange={handleChange} />
               )}
               {field.type === 'select' && (
                 <Select native value={getValue<string>(field.id)} sx={{mb: 2}} fullWidth id={field.id.toString()} 
-                    name={field.name} variant="outlined" onChange={handleChange}>
+                    variant="outlined" onChange={handleChange}>
                   {field.options!.map((option) => (
                     <option key={option.value} value={option.value}>
                       {option.name}

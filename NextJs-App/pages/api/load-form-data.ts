@@ -1,9 +1,5 @@
-import formConfig from '../../config.json';
 import formData from '../../data.json';
-import FormConfig, { Field } from "../../models/FormConfig";
 import FormData, { FieldValue } from "../../models/FormData";
-import path from 'path';
-import { promises as fs } from 'fs';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 

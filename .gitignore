@@ -494,3 +494,5 @@ next-env.d.ts
 /test-app/.next/static/webpack/webpack.f6498df46f946b7f.hot-update.js
 /test-app/.next/static/webpack/webpack.fc8675b89e4763e2.hot-update.js
 /test-app/.next/trace
+/NextJs-App/.next
+/NextJs-App/node_modules
