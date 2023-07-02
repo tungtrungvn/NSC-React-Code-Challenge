@@ -1,5 +1,5 @@
 //import ModalMessage from "@/components/Modal";
-import ModalMessage from "@/components/ModalMessage";
+import AlertMessage from "@/components/AlertMessage";
 import { title } from "process";
 //import ModalMessage from "../components/ModalMessage";
 import ReactDOM from "react-dom";

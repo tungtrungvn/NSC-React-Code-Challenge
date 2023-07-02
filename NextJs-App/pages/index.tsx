@@ -3,7 +3,7 @@ import FormConfig from '@/models/FormConfig';
 import FormData from '@/models/FormData';
 import axios from 'axios';
 import DynamicForm from '@/components/DynamicForm';
-import ModalMessage from '@/components/ModalMessage';
+import AlertMessage from '@/components/AlertMessage';
 
 const centerDiv = {
   margin: 'auto',
@@ -29,6 +29,7 @@ export default function Home() {
         setFormData(data);
       } catch (error) {
         console.error('An error occurred while fetching form config:', error);
+        alert('Load form error');
       }
     };
     fetchData();
@@ -51,7 +52,7 @@ export default function Home() {
     return (
       <div style={centerDiv}>
         <DynamicForm config={formConfig} data={formData} submitCallback={storeFormDataCallback} />
-        <ModalMessage open={openMessage} onClose={()=>{setOpenMessage(false);}} title={modalTitle} message={modalMessage}/>
+        <AlertMessage open={openMessage} onClose={()=>{setOpenMessage(false);}} title={modalTitle} message={modalMessage}/>
       </div>
     )
   }
